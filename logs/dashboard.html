@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MLOps Dashboard - Telco Churn</title>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
+    --border: #2e3350; --accent: #5b8dee; --accent2: #3ecf8e;
+    --warn: #f59e0b; --danger: #ef4444; --text: #e2e8f0; --muted: #8892a4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--text); padding: 40px;
+  }
+  h1 { font-size: 24px; margin-bottom: 8px; }
+  .sub { color: var(--accent); font-size: 13px; text-transform: uppercase;
+          letter-spacing: 0.08em; margin-bottom: 32px; }
+  h2 {
+    font-size: 16px; color: #fff; margin: 32px 0 12px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+  table {
+    width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 13px;
+  }
+  th {
+    background: var(--surface2); color: var(--text); text-align: left;
+    padding: 8px 12px; border: 1px solid var(--border);
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  td {
+    padding: 7px 12px; border: 1px solid var(--border); color: var(--muted);
+  }
+  tr:hover td { background: var(--surface2); }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px 20px; margin: 12px 0;
+  }
+  a { color: var(--accent); }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+  }
+  .badge.green { background: rgba(62,207,142,0.15); color: var(--accent2); }
+  .badge.blue { background: rgba(91,141,238,0.15); color: var(--accent); }
+</style>
+</head>
+<body>
+<h1>MLOps Dashboard</h1>
+<div class="sub">Telco Churn Pipeline &mdash; Module 2</div>
+
+<h2>Experiment Runs (MLflow)</h2>
+<table>
+  <tr>
+    <th>Time</th><th>Experiment</th><th>Run</th><th>Model</th>
+    <th>F1</th><th>Recall</th><th>Precision</th><th>AUC-ROC</th>
+    <th>Missed</th><th>Cost</th>
+  </tr>
+  <tr><td>2026-04-09 16:07</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.637</td><td>0.778</td><td>0.539</td><td>0.863</td><td>55</td><td>$90,750</td></tr>
+<tr><td>2026-04-09 16:05</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.637</td><td>0.778</td><td>0.539</td><td>0.863</td><td>55</td><td>$90,750</td></tr>
+<tr><td>2026-04-09 16:05</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.637</td><td>0.778</td><td>0.539</td><td>0.863</td><td>55</td><td>$90,750</td></tr>
+<tr><td>2026-04-09 16:05</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.637</td><td>0.778</td><td>0.539</td><td>0.863</td><td>55</td><td>$90,750</td></tr>
+<tr><td>2026-04-09 16:05</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.637</td><td>0.778</td><td>0.539</td><td>0.863</td><td>55</td><td>$90,750</td></tr>
+<tr><td>2026-04-09 16:04</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.631</td><td>0.769</td><td>0.534</td><td>0.846</td><td>56</td><td>$92,100</td></tr>
+<tr><td>2026-04-09 16:04</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.631</td><td>0.769</td><td>0.534</td><td>0.846</td><td>56</td><td>$92,100</td></tr>
+<tr><td>2026-04-09 15:58</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.591</td><td>0.784</td><td>0.475</td><td>0.840</td><td>49</td><td>$83,350</td></tr>
+<tr><td>2026-04-09 15:55</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.571</td><td>0.656</td><td>0.505</td><td>0.841</td><td>78</td><td>$124,300</td></tr>
+<tr><td>2026-04-09 15:53</td><td>telco-churn-pipeline</td><td>retrain-stress-mixed</td><td>LightGBM</td><td>0.796</td><td>0.981</td><td>0.670</td><td>0.704</td><td>3</td><td>$8,350</td></tr>
+<tr><td>2026-04-09 15:53</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.571</td><td>0.656</td><td>0.505</td><td>0.841</td><td>78</td><td>$124,300</td></tr>
+<tr><td>2026-04-09 15:49</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.571</td><td>0.656</td><td>0.505</td><td>0.841</td><td>78</td><td>$124,300</td></tr>
+<tr><td>2026-04-09 15:40</td><td>telco-churn-pipeline</td><td>retrain-stress-mixed</td><td>LightGBM</td><td>0.796</td><td>0.981</td><td>0.670</td><td>0.704</td><td>3</td><td>$8,350</td></tr>
+<tr><td>2026-04-09 15:36</td><td>telco-churn-pipeline</td><td>retrain-stress-mixed</td><td>LightGBM</td><td>0.794</td><td>0.994</td><td>0.661</td><td>0.704</td><td>1</td><td>$5,550</td></tr>
+<tr><td>2026-04-09 13:46</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.571</td><td>0.656</td><td>0.505</td><td>0.841</td><td>78</td><td>$124,300</td></tr>
+<tr><td>2026-04-09 13:46</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.571</td><td>0.656</td><td>0.505</td><td>0.841</td><td>78</td><td>$124,300</td></tr>
+<tr><td>2026-04-09 13:27</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.571</td><td>0.656</td><td>0.505</td><td>0.841</td><td>78</td><td>$124,300</td></tr>
+<tr><td>2026-04-09 03:56</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.645</td><td>0.717</td><td>0.586</td><td>0.860</td><td>90</td><td>$143,050</td></tr>
+<tr><td>2026-04-09 03:52</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.645</td><td>0.717</td><td>0.586</td><td>0.860</td><td>90</td><td>$143,050</td></tr>
+<tr><td>2026-04-09 03:45</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.645</td><td>0.717</td><td>0.586</td><td>0.860</td><td>90</td><td>$143,050</td></tr>
+<tr><td>2026-04-09 03:21</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.554</td><td>0.743</td><td>0.441</td><td>0.847</td><td>43</td><td>$72,350</td></tr>
+<tr><td>2026-04-09 03:14</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.545</td><td>0.707</td><td>0.444</td><td>0.848</td><td>49</td><td>$80,900</td></tr>
+<tr><td>2026-04-09 03:13</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.545</td><td>0.707</td><td>0.444</td><td>0.848</td><td>49</td><td>$80,900</td></tr>
+<tr><td>2026-04-09 02:36</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.543</td><td>0.641</td><td>0.471</td><td>0.846</td><td>60</td><td>$96,000</td></tr>
+<tr><td>2026-04-09 02:33</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.543</td><td>0.641</td><td>0.471</td><td>0.846</td><td>60</td><td>$96,000</td></tr>
+<tr><td>2026-04-09 02:28</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.543</td><td>0.641</td><td>0.471</td><td>0.846</td><td>60</td><td>$96,000</td></tr>
+<tr><td>2026-04-09 02:15</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.532</td><td>0.653</td><td>0.449</td><td>0.831</td><td>58</td><td>$93,700</td></tr>
+<tr><td>2026-04-09 02:14</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:11</td><td>telco-churn-pipeline</td><td>retrain-mixed</td><td>LightGBM</td><td>0.707</td><td>0.836</td><td>0</td><td>0.763</td><td>51</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:11</td><td>telco-churn-pipeline</td><td>retrain-mixed</td><td>LightGBM</td><td>0.707</td><td>0.836</td><td>0</td><td>0.763</td><td>51</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:04</td><td>telco-churn-pipeline</td><td>retrain-mixed</td><td>LightGBM</td><td>0.834</td><td>1.000</td><td>0</td><td>0.950</td><td>0</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:03</td><td>telco-churn-pipeline</td><td>pipeline-run</td><td>LightGBM</td><td>0.523</td><td>0.641</td><td>0.442</td><td>0.827</td><td>60</td><td>$96,750</td></tr>
+<tr><td>2026-04-09 16:04</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.591</td><td>0.740</td><td>0.491</td><td>0.840</td><td>59</td><td>$0</td></tr>
+<tr><td>2026-04-09 16:03</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.583</td><td>0.771</td><td>0.469</td><td>0.838</td><td>52</td><td>$0</td></tr>
+<tr><td>2026-04-09 16:02</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.567</td><td>0.806</td><td>0.437</td><td>0.842</td><td>44</td><td>$0</td></tr>
+<tr><td>2026-04-09 16:02</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.564</td><td>0.656</td><td>0.495</td><td>0.826</td><td>78</td><td>$0</td></tr>
+<tr><td>2026-04-09 16:02</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.578</td><td>0.762</td><td>0.465</td><td>0.833</td><td>54</td><td>$0</td></tr>
+<tr><td>2026-04-09 16:02</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.486</td><td>0.427</td><td>0.564</td><td>0.826</td><td>130</td><td>$0</td></tr>
+<tr><td>2026-04-09 16:02</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.579</td><td>0.811</td><td>0.450</td><td>0.843</td><td>43</td><td>$0</td></tr>
+<tr><td>2026-04-09 15:57</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.591</td><td>0.740</td><td>0.491</td><td>0.840</td><td>59</td><td>$0</td></tr>
+<tr><td>2026-04-09 15:56</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.591</td><td>0.784</td><td>0.475</td><td>0.840</td><td>49</td><td>$0</td></tr>
+<tr><td>2026-04-09 15:56</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.567</td><td>0.806</td><td>0.437</td><td>0.842</td><td>44</td><td>$0</td></tr>
+<tr><td>2026-04-09 15:55</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.564</td><td>0.656</td><td>0.495</td><td>0.826</td><td>78</td><td>$0</td></tr>
+<tr><td>2026-04-09 15:55</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.578</td><td>0.762</td><td>0.465</td><td>0.833</td><td>54</td><td>$0</td></tr>
+<tr><td>2026-04-09 15:55</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.486</td><td>0.427</td><td>0.564</td><td>0.826</td><td>130</td><td>$0</td></tr>
+<tr><td>2026-04-09 15:55</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.579</td><td>0.811</td><td>0.450</td><td>0.843</td><td>43</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:44</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.645</td><td>0.726</td><td>0.580</td><td>0.861</td><td>87</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:43</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.647</td><td>0.720</td><td>0.587</td><td>0.860</td><td>89</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:43</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.642</td><td>0.802</td><td>0.536</td><td>0.860</td><td>63</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:42</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.602</td><td>0.654</td><td>0.558</td><td>0.840</td><td>110</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:42</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.640</td><td>0.767</td><td>0.548</td><td>0.857</td><td>74</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:42</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.573</td><td>0.506</td><td>0.660</td><td>0.843</td><td>157</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:42</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.642</td><td>0.799</td><td>0.537</td><td>0.859</td><td>64</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:20</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.554</td><td>0.743</td><td>0.441</td><td>0.847</td><td>43</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:19</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.536</td><td>0.802</td><td>0.402</td><td>0.845</td><td>33</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:19</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.547</td><td>0.647</td><td>0.474</td><td>0.849</td><td>59</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:18</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.520</td><td>0.581</td><td>0.471</td><td>0.839</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:18</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.538</td><td>0.725</td><td>0.428</td><td>0.847</td><td>46</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:18</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.352</td><td>0.263</td><td>0.530</td><td>0.823</td><td>123</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:18</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.522</td><td>0.778</td><td>0.393</td><td>0.849</td><td>37</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:13</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.543</td><td>0.641</td><td>0.471</td><td>0.846</td><td>60</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:12</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.529</td><td>0.796</td><td>0.396</td><td>0.846</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:11</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.545</td><td>0.707</td><td>0.444</td><td>0.848</td><td>49</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:11</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.516</td><td>0.581</td><td>0.464</td><td>0.829</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:11</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.564</td><td>0.766</td><td>0.446</td><td>0.844</td><td>39</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:11</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.364</td><td>0.275</td><td>0.535</td><td>0.820</td><td>121</td><td>$0</td></tr>
+<tr><td>2026-04-09 03:11</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.521</td><td>0.796</td><td>0.387</td><td>0.848</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:37</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.543</td><td>0.641</td><td>0.471</td><td>0.846</td><td>60</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:36</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.529</td><td>0.796</td><td>0.396</td><td>0.846</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:36</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.538</td><td>0.653</td><td>0.458</td><td>0.850</td><td>58</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:36</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.516</td><td>0.581</td><td>0.464</td><td>0.829</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:36</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.564</td><td>0.766</td><td>0.446</td><td>0.844</td><td>39</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:36</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.364</td><td>0.275</td><td>0.535</td><td>0.820</td><td>121</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:36</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.521</td><td>0.796</td><td>0.387</td><td>0.848</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:31</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.543</td><td>0.641</td><td>0.471</td><td>0.846</td><td>60</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:30</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.529</td><td>0.796</td><td>0.396</td><td>0.846</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:30</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.538</td><td>0.653</td><td>0.458</td><td>0.850</td><td>58</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:30</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.516</td><td>0.581</td><td>0.464</td><td>0.829</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:30</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.564</td><td>0.766</td><td>0.446</td><td>0.844</td><td>39</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:30</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.364</td><td>0.275</td><td>0.535</td><td>0.820</td><td>121</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:30</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.521</td><td>0.796</td><td>0.387</td><td>0.848</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:28</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.543</td><td>0.641</td><td>0.471</td><td>0.846</td><td>60</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:27</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.529</td><td>0.796</td><td>0.396</td><td>0.846</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:27</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.538</td><td>0.653</td><td>0.458</td><td>0.850</td><td>58</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:27</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.516</td><td>0.581</td><td>0.464</td><td>0.829</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:27</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.564</td><td>0.766</td><td>0.446</td><td>0.844</td><td>39</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:27</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.364</td><td>0.275</td><td>0.535</td><td>0.820</td><td>121</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:27</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.521</td><td>0.796</td><td>0.387</td><td>0.848</td><td>34</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:01</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.420</td><td>0.353</td><td>0.518</td><td>0.849</td><td>108</td><td>$0</td></tr>
+<tr><td>2026-04-09 02:00</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.521</td><td>0.641</td><td>0.439</td><td>0.843</td><td>60</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:58</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.403</td><td>0.305</td><td>0.593</td><td>0.825</td><td>116</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:58</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.516</td><td>0.581</td><td>0.464</td><td>0.829</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:58</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.425</td><td>0.347</td><td>0.547</td><td>0.846</td><td>109</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:58</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.364</td><td>0.275</td><td>0.535</td><td>0.820</td><td>121</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:58</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.538</td><td>0.808</td><td>0.403</td><td>0.849</td><td>32</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:57</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.423</td><td>0.353</td><td>0.527</td><td>0.848</td><td>108</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:56</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.551</td><td>0.713</td><td>0.449</td><td>0.852</td><td>48</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:55</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.397</td><td>0.299</td><td>0.588</td><td>0.824</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:55</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.516</td><td>0.581</td><td>0.464</td><td>0.829</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:55</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.425</td><td>0.347</td><td>0.547</td><td>0.846</td><td>109</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:55</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.364</td><td>0.275</td><td>0.535</td><td>0.820</td><td>121</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:55</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.538</td><td>0.808</td><td>0.403</td><td>0.849</td><td>32</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:45</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.426</td><td>0.347</td><td>0.552</td><td>0.849</td><td>109</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:44</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.558</td><td>0.772</td><td>0.437</td><td>0.850</td><td>38</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:44</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.480</td><td>0.389</td><td>0.625</td><td>0.848</td><td>102</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:43</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.516</td><td>0.581</td><td>0.464</td><td>0.829</td><td>70</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:43</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.425</td><td>0.347</td><td>0.547</td><td>0.846</td><td>109</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:43</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.364</td><td>0.275</td><td>0.535</td><td>0.820</td><td>121</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:43</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.538</td><td>0.808</td><td>0.403</td><td>0.849</td><td>32</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:39</td><td>telco-churn-model-selection</td><td>XGBoost (GBM) (Optuna-tuned)</td><td>XGBoost (GBM)</td><td>0.433</td><td>0.365</td><td>0.530</td><td>0.847</td><td>106</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:38</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM</td><td>0.556</td><td>0.725</td><td>0.451</td><td>0.850</td><td>46</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:38</td><td>telco-churn-model-selection</td><td>Logistic Regression (Optuna-tuned)</td><td>Logistic Regression</td><td>0.411</td><td>0.311</td><td>0.605</td><td>0.846</td><td>115</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:38</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.482</td><td>0.551</td><td>0.428</td><td>0.825</td><td>75</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:38</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.440</td><td>0.359</td><td>0.566</td><td>0.849</td><td>107</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:38</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.402</td><td>0.299</td><td>0.610</td><td>0.834</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:38</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.525</td><td>0.790</td><td>0.393</td><td>0.848</td><td>35</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.482</td><td>0.551</td><td>0.428</td><td>0.825</td><td>75</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.440</td><td>0.359</td><td>0.566</td><td>0.849</td><td>107</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.402</td><td>0.299</td><td>0.610</td><td>0.834</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.525</td><td>0.790</td><td>0.393</td><td>0.848</td><td>35</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.482</td><td>0.551</td><td>0.428</td><td>0.825</td><td>75</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.440</td><td>0.359</td><td>0.566</td><td>0.849</td><td>107</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.402</td><td>0.299</td><td>0.610</td><td>0.834</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:37</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.525</td><td>0.790</td><td>0.393</td><td>0.848</td><td>35</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.482</td><td>0.551</td><td>0.428</td><td>0.825</td><td>75</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.440</td><td>0.359</td><td>0.566</td><td>0.849</td><td>107</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.402</td><td>0.299</td><td>0.610</td><td>0.834</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.525</td><td>0.790</td><td>0.393</td><td>0.848</td><td>35</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.482</td><td>0.551</td><td>0.428</td><td>0.825</td><td>75</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.440</td><td>0.359</td><td>0.566</td><td>0.849</td><td>107</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.402</td><td>0.299</td><td>0.610</td><td>0.834</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:36</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.525</td><td>0.790</td><td>0.393</td><td>0.848</td><td>35</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:34</td><td>telco-churn-model-selection</td><td>LightGBM (Optuna-tuned)</td><td>LightGBM (Optuna-tuned)</td><td>0.556</td><td>0.725</td><td>0.451</td><td>0.850</td><td>46</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:34</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.482</td><td>0.551</td><td>0.428</td><td>0.825</td><td>75</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:34</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.440</td><td>0.359</td><td>0.566</td><td>0.849</td><td>107</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:34</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.402</td><td>0.299</td><td>0.610</td><td>0.834</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-09 01:34</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.525</td><td>0.790</td><td>0.393</td><td>0.848</td><td>35</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:03</td><td>telco-churn-model-selection</td><td>LightGBM</td><td>LightGBM</td><td>0.482</td><td>0.551</td><td>0.428</td><td>0.825</td><td>75</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:03</td><td>telco-churn-model-selection</td><td>XGBoost (GBM)</td><td>XGBoost (GBM)</td><td>0.440</td><td>0.359</td><td>0.566</td><td>0.849</td><td>107</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:03</td><td>telco-churn-model-selection</td><td>Random Forest</td><td>Random Forest</td><td>0.402</td><td>0.299</td><td>0.610</td><td>0.834</td><td>117</td><td>$0</td></tr>
+<tr><td>2026-04-04 16:03</td><td>telco-churn-model-selection</td><td>Logistic Regression</td><td>Logistic Regression</td><td>0.525</td><td>0.790</td><td>0.393</td><td>0.848</td><td>35</td><td>$0</td></tr>
+</table>
+
+<h2>Model Registry</h2>
+<table>
+  <tr><th>Version</th><th>Stage</th><th>Run ID</th><th>Created</th></tr>
+  <tr><td>19</td><td>production</td><td>b0203d1b5397</td><td>2026-04-09 16:06</td></tr>
+<tr><td>18</td><td>archived</td><td>94c604951b99</td><td>2026-04-09 16:05</td></tr>
+<tr><td>17</td><td>archived</td><td>80693086105f</td><td>2026-04-09 16:05</td></tr>
+<tr><td>16</td><td>archived</td><td>cf1c9ce23bfc</td><td>2026-04-09 16:04</td></tr>
+<tr><td>15</td><td>archived</td><td>0911f0729527</td><td>2026-04-09 15:58</td></tr>
+<tr><td>14</td><td>archived</td><td>6fdc3c98ae86</td><td>2026-04-09 15:55</td></tr>
+<tr><td>13</td><td>archived</td><td>bc32e253e518</td><td>2026-04-09 15:53</td></tr>
+<tr><td>12</td><td>archived</td><td>391802fd3ee8</td><td>2026-04-09 15:53</td></tr>
+<tr><td>11</td><td>archived</td><td>a0b5fd90ebf9</td><td>2026-04-09 15:49</td></tr>
+<tr><td>10</td><td>archived</td><td>7194e1afce86</td><td>2026-04-09 15:40</td></tr>
+<tr><td>9</td><td>archived</td><td>ef713f4c97c2</td><td>2026-04-09 15:37</td></tr>
+<tr><td>8</td><td>archived</td><td>a21e06ec1177</td><td>2026-04-09 13:46</td></tr>
+<tr><td>7</td><td>archived</td><td>e6100afbed5e</td><td>2026-04-09 13:46</td></tr>
+<tr><td>6</td><td>archived</td><td>ff754738c120</td><td>2026-04-09 13:27</td></tr>
+<tr><td>5</td><td>archived</td><td>7bc26eea4cf1</td><td>2026-04-09 03:56</td></tr>
+<tr><td>4</td><td>archived</td><td>83feb9afbefd</td><td>2026-04-09 03:52</td></tr>
+<tr><td>3</td><td>archived</td><td>7310c2d504f4</td><td>2026-04-09 03:45</td></tr>
+<tr><td>2</td><td>archived</td><td>cf9d3b5de50f</td><td>2026-04-09 03:21</td></tr>
+<tr><td>1</td><td>archived</td><td>f000010d3652</td><td>2026-04-09 03:14</td></tr>
+</table>
+
+<h2>Drift Detection</h2>
+<div class="card">
+  <p><a href="file:///E:/projeect/upgrad_mlops/MLOps_Cloud_Pipeline/logs/drift_report_current.html" target="_blank">Open Stable Batch Drift Report</a> | <a href="file:///E:/projeect/upgrad_mlops/MLOps_Cloud_Pipeline/logs/drift_report_stress.html" target="_blank">Open Stress Batch Drift Report</a></p>
+  <p style="color: var(--muted); font-size: 13px; margin-top: 8px;">
+    Stable monitoring should stay calm on <code>current.csv</code>, while
+    <code>current_stress.csv</code> is the learner-facing batch that demonstrates
+    visible drift and retraining.
+  </p>
+</div>
+
+<h2>Lineage (Latest Pipeline Run)</h2>
+<table>
+  <tr><th>Field</th><th>Value</th></tr>
+  
+    <tr><td>MLflow Run ID</td><td>82d7e730ae7e</td></tr>
+    <tr><td>Train data</td><td>2f77ab270c83f02b</td></tr>
+    <tr><td>Current data</td><td>175bdbe588096c78</td></tr>
+    <tr><td>Python</td><td>3.12.10 (tags/v3.12.</td></tr>
+    <tr><td>Pipeline version</td><td>module2-v2.0</td></tr>
+    <tr><td>F1 (pre-deploy)</td><td>0.637</td></tr>
+    <tr><td>Business cost</td><td>$90,750</td></tr>
+    
+</table>
+
+<p style="color: var(--muted); font-size: 12px; margin-top: 40px;">
+  For the full interactive MLflow UI, run:
+  <code style="background: var(--surface2); padding: 2px 6px; border-radius: 3px;">
+    mlflow ui --backend-store-uri file:///E:/projeect/upgrad_mlops/MLOps_Cloud_Pipeline/mlruns
+  </code>
+</p>
+</body>
+</html>
