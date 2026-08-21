@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 outs:
 - md5: 666b9df42c47ca4755a441a3f744c911
   size: 677532
   hash: md5
   path: train.csv
-=======
-outs:
-- md5: 666b9df42c47ca4755a441a3f744c911
-  size: 677532
-  hash: md5
-  path: train.csv
->>>>>>> 9478291fc2221515aaaabc312b4d5d15db298bf8
