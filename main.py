@@ -1,6 +1,6 @@
 """
 main.py  --  Pipeline Entry Point
-==================================
+======================================
 Runs the complete MLOps pipeline end-to-end.
 
     python main.py
